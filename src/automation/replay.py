@@ -4,7 +4,6 @@ from pynput import mouse, keyboard
 
 # Initialize controllers for replay
 mouse_controller = mouse.Controller()
-keyboard_controller = keyboard.Controller()
 
 # Load the events from the JSON file
 with open('events.json', 'r') as f:
@@ -22,24 +21,8 @@ for event in events:
         # Move the mouse to the recorded position and click/release
         mouse_controller.position = (event['x'], event['y'])
         if event['pressed']:
-            mouse_controller.press(mouse.Button[event['button'].split('.')[1]])
+            mouse_controller.press(mouse.Button['left'])
         else:
-            mouse_controller.release(mouse.Button[event['button'].split('.')[1]])
-    elif event['type'] == 'key_press':
-        try:
-            if len(event['key']) == 1:  # Printable character
-                keyboard_controller.press(event['key'])
-            else:
-                keyboard_controller.press(getattr(keyboard.Key, event['key'].split('.')[1]))
-        except AttributeError:
-            pass  # Handle special keys (like Ctrl) here if needed
-    elif event['type'] == 'key_release':
-        try:
-            if len(event['key']) == 1:  # Printable character
-                keyboard_controller.release(event['key'])
-            else:
-                keyboard_controller.release(getattr(keyboard.Key, event['key'].split('.')[1]))
-        except AttributeError:
-            pass  # Handle special keys (like Ctrl) here if needed
+            mouse_controller.release(mouse.Button['left'])
 
 print("Replay finished.")

@@ -7,6 +7,7 @@ events = []
 
 # This function will be called whenever a mouse click is detected
 def on_click(x, y, button, pressed):
+    # A right-click action signals the end of the recording
     if str(button) == 'Button.right':
         return False
     else:
@@ -21,13 +22,9 @@ def on_click(x, y, button, pressed):
         events.append(event)
         print(f"Mouse {'pressed' if pressed else 'released'} at ({x}, {y}) with {button}")
 
-# Set up mouse listener
+# Set up mouse listener, start listening, and block until right-click event is received
 mouse_listener = mouse.Listener(on_click=on_click)
-
-# Start the listeners
 mouse_listener.start()
-
-# Wait for the listener to stop (blocking)
 mouse_listener.join()
 
 # Save the events to a JSON file
