@@ -1,0 +1,5 @@
+VAR
+	reset : BOOL;
+	countUp : BOOL;
+	counter : USINT;
+END_VAR
