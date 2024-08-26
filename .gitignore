@@ -1,0 +1,6 @@
+/src/plc/plcProject/Binaries/**
+/src/plc/plcProject/Temp/**
+/src/plc/plcProject/Diagnosis/**
+*.set
+
+/venv/**
