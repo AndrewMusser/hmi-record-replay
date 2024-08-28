@@ -118,6 +118,8 @@
     <Source File="Bitmaps\zuneListPadHor_released.bminfo"/>
     <Source File="Bitmaps\zuneListPadVer_pressed.bminfo"/>
     <Source File="Bitmaps\zuneNumPad_pressed.bminfo"/>
+    <Source File="Bitmaps\Logo.bminfo"/>
+    <Source File="Bitmaps\Logo_with_name.bminfo"/>
     <Source File="BitmapGroups\AlphaPadQVGA.bmgrp"/>
     <Source File="BitmapGroups\NumPad.bmgrp"/>
     <Source File="BitmapGroups\AlphaPad.bmgrp"/>
