@@ -12,10 +12,8 @@ def on_click(x, y, button, pressed):
         return False
     else:
         event = {
-            'type': 'mouse_click',
             'x': x,
             'y': y,
-            'button': str(button),
             'pressed': pressed,
             'time': time.time()  # Record the time of the event
         }

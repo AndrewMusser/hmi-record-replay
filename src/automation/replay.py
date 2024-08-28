@@ -17,12 +17,11 @@ for event in events:
     time.sleep(event['time'] - start_time)
     start_time = event['time']
 
-    if event['type'] == 'mouse_click':
-        # Move the mouse to the recorded position and click/release
-        mouse_controller.position = (event['x'], event['y'])
-        if event['pressed']:
-            mouse_controller.press(mouse.Button['left'])
-        else:
-            mouse_controller.release(mouse.Button['left'])
+    # Move the mouse to the recorded position and click/release
+    mouse_controller.position = (event['x'], event['y'])
+    if event['pressed']:
+        mouse_controller.press(mouse.Button['left'])
+    else:
+        mouse_controller.release(mouse.Button['left'])
 
 print("Replay finished.")
