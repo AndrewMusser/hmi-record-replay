@@ -21,3 +21,7 @@ jobs:
     - uses: actions/checkout@v4
       with:
         ref: 'feature/ci-test'
+    - name: build the AS project
+      run: |
+        cd $GITHUB_WORKSPACE/src/plc/plcProject
+        "C:\Program Files\BRAutomation4\AS412\bin-en\BR.AS.Build.exe" plcProject.apj -c Simulator -buildMode "Build"
