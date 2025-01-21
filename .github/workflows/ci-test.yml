@@ -24,4 +24,4 @@ jobs:
     - name: build the AS project
       run: |
         cd $GITHUB_WORKSPACE/src/plc/plcProject
-        "C:\Program Files\BRAutomation4\AS412\bin-en\BR.AS.Build.exe" plcProject.apj -c Simulator -buildMode "Build"
+        "C:\Program Files\BRAutomation4\AS412\bin-en\BR.AS.Build.exe" "./plcProject.apj" -c Simulator -buildMode "Build"
